@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="images/favicon.png" type="">
+
+  <title> Feane </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="css/all.min.css" />
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- nice select  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"
+    integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ=="
+    crossorigin="anonymous" />
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <div class="bg-box">
+      <img src="images/hero-bg.jpg" alt="">
+    </div>
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              Feane
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  mx-auto ">
+              <li class="nav-item">
+                <a class="nav-link" href="">Home </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="">Menu <span class="sr-only">(current)</span> </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">Book Table</a>
+              </li>
+            </ul>
+            <div class="user_option">
+              <a href="" class="user_link">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </a>
+              <form class="form-inline">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+              <a type="button" onclick="cart()" class="order_online"><i class="fa fa-cart-shopping"></i></a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- food section -->
+
+  <section class="food_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>Our Menu</h2>
+      </div>
+
+
+
+      <div class="filters-content">
+        <div class="row grid" id="record">
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- owl slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- isotope js -->
+  <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
+  <!-- nice select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <!-- custom js -->
+  <!-- <script src="js/custom.js"></script> -->
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <!-- End Google Map -->
+
+
+
+  <script type="text/javascript">
+
+    let data =
+      [
+        {
+          id: 111,
+          img: "images/f1.png",
+          name: "Delicious Pizza",
+          discription: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+          qty: 1,
+          price: 200,
+        },
+        {
+          id: 222,
+          img: "images/f2.png",
+          name: "Delicious Burger",
+          discription: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+          qty: 1,
+          price: 250,
+        },
+        {
+          id: 333,
+          img: "images/f3.png",
+          name: "Delicious Pizza",
+          discription: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+          qty: 1,
+          price: 300,
+        },
+        {
+          id: 444,
+          img: "images/f4.png",
+          name: "Delicious Pasta",
+          discription: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+          qty: 1,
+          price: 250,
+        },
+        {
+          id: 555,
+          img: "images/f5.png",
+          name: "French Fries",
+          discription: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+          qty: 1,
+          price: 100,
+        },
+        {
+          id: 666,
+          img: "images/f6.png",
+          name: "Delicious Pizza",
+          discription: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+          qty: 1,
+          price: 150,
+        },
+        {
+          id: 777,
+          img: "images/f7.png",
+          name: "Mac Maharaja",
+          discription: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+          qty: 1,
+          price: 250,
+        },
+        {
+          id: 888,
+          img: "images/f8.png",
+          name: "Whoper Burger",
+          discription: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+          qty: 1,
+          price: 300,
+        },
+        {
+          id: 999,
+          img: "images/f9.png",
+          name: "Itallian Pasta",
+          discription: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+          qty: 1,
+          price: 250,
+        },
+      ]
+
+    const Viewdata = () => {
+      localStorage.setItem('all', JSON.stringify(data))
+
+      let tbl = "";
+      data.map((val) => {
+        tbl += `
+            <div class="col-sm-6 col-lg-4 all pizza">
+               <div class="box">
+                  <div>
+                    <div class="img-box">
+                      <img src="${val.img}" alt="">
+                    </div>
+                    <div class="detail-box">
+                      <h5>${val.name}</h5>
+                      <p>${val.discription}</p>
+                      <h6>Qty :- ${val.qty}</h6>
+                      <div class="options">
+                          <h6>&#8377;${val.price}</h6>
+                         <a type="button" id="button_${val.id}" onclick="add(${val.id})" ><i class="fa fa-cart-shopping text-white"></i></a>
+                       </div>
+                    </div>
+                  </div>
+              </div>
+            </div>       
+            `
+      })
+      document.getElementById('record').innerHTML = tbl;
+
+    }
+    Viewdata();
+
+    const add = (fid) => {
+      let cart = []
+      let allData = JSON.parse(localStorage.getItem('all'))
+      allData.map((val) => {
+        if (val.id == fid) {
+          let obj = {
+            id: val.id,
+            name: val.name,
+            qty: val.qty,
+            price: val.price,
+            discription: val.discription,
+            img: val.img,
+          }
+          if (localStorage.getItem('cart') === undefined || localStorage.getItem('cart') === null) {
+            cart.push(obj);
+            localStorage.setItem('cart', JSON.stringify(cart));
+          }
+          else {
+            let val = JSON.parse(localStorage.getItem('cart'))
+            val.push(obj);
+            localStorage.setItem('cart', JSON.stringify(val));
+          }
+        }
+      })
+      alert('Order successfully');
+      if (fid) {
+        document.getElementById('button_'+fid).style.display = "none";
+      }
+    }
+
+    const cart = () => {
+      window.location.href = "cart.html"
+    }
+
+  </script>
+
+</body>
+
+</html>

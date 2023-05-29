@@ -25,11 +25,11 @@
 
         </tbody>
         <tfoot>
-            <tr class="table-dark">
-                <td colspan="4" style="text-align: end;"><strong>Total:</strong></td>
+            <!-- <tr class="table-dark">
+                 <td colspan="4" style="text-align: end;"><strong>Total:</strong></td> 
                 <td id="ans"></td>
                 <td></td>
-            </tr>
+            </tr> -->
         </tfoot>
     </table>
 </div>
@@ -52,12 +52,30 @@
                             <button class="btn btn-success btn-sm" onclick="Edit(${val.id})" >Edit</button>
                             <button class="btn btn-danger btn-sm" onclick="Delete(${val.id})" >Delete</button>
                         </td>
+                       
                     </tr>
+
+                    
                             `
 
 
         })
+
+        let total = 0;
+        allcart.map((v) => {
+            total += v.qty * v.price;
+        })
+
+        tbl += `
+                    
+                    <tr class="table-dark">
+                 <td colspan="5" style="text-align: end;"><strong>Total :- ${total}</strong></td> 
+                <td id="ans"></td>
+                
+            </tr>
+                `
         document.getElementById('record').innerHTML = tbl;
+
     }
     Viewdata();
 
@@ -87,19 +105,7 @@
         Viewdata();
     }
 
-    const sum = () => {
-        let cart = JSON.parse(localStorage.getItem('cart'));
-        let total = 0;
-
-        cart.map((item) => {
-            let price=parseInt(cart.qty * cart.price);
-            console.log(price);
-            total +=  parseInt(item.price);
-        })
-        // console.log(total);
-        let ans=document.getElementById('ans').innerHTML=total
-    }
-    sum();
+   
 
 </script>
 

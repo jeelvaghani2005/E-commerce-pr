@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register/login</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+        <div class="signup">
+            <form>
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <input id="name" type="text" name="txt" placeholder="User name" >
+                <input id="email" type="email" name="email" placeholder="Email" >
+                <input id="password" name="pswd" placeholder="Password" >
+                <input id="cpassword" name="pswd" placeholder="confirm Password" >
+                <button onclick="register()">Sign up</button>
+            </form>
+        </div>
+        
+
+
+    </div>
+
+    <script type="text/javascript">
+
+        let data=[]
+
+        const register = () => {
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+            let cpassword = document.getElementById('cpassword').value;
+            console.log(password);
+
+            if (!name || !email || !password || !cpassword) {
+                alert('plese fill all field ');
+                return false;
+            }
+
+            if (password == cpassword) {
+                let obj = {
+                    id: Math.floor(Math.random() * 10000),
+                    name: name,
+                    email: email,
+                    password: password,
+                }
+                if (localStorage.getItem('user') === null || localStorage.getItem('user') === undefined) {
+                    data.push(obj);
+                    localStorage.setItem('user', JSON.stringify(data));
+                }
+                else {
+                    let val = JSON.parse(localStorage.getItem('user'));
+                    val.push(obj)
+                    localStorage.setItem('user', JSON.stringify(val));
+                }
+                alert('User added succesfully');
+                document.getElementById('name').value = "";
+                document.getElementById('email').value = "";
+                document.getElementById('password').value = "";
+                document.getElementById('cpassword').value = "";
+            }
+            else {
+                alert('Password are not match ');
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

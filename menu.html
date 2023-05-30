@@ -82,6 +82,7 @@
                 </button>
               </form>
               <a type="button" onclick="cart()" class="order_online"><i class="fa fa-cart-shopping"></i></a>
+              <a type="button" onclick="logout()" class="order_online"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
             </div>
           </div>
         </nav>
@@ -131,6 +132,9 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>
   <!-- End Google Map -->
+  <script src="watchman.js">
+
+  </script>
 
 
 
@@ -230,7 +234,7 @@
                       <h6>Qty :- ${val.qty}</h6>
                       <div class="options">
                           <h6>&#8377;${val.price}</h6>
-                         <a type="button" id="button_${val.id}" onclick="add(${val.id})" ><i class="fa fa-cart-shopping text-white"></i></a>
+                          <a  type="button" id="button_${val.id}" onclick="add(${val.id})" ><i class="fa fa-cart-shopping text-white"></i></a>
                        </div>
                     </div>
                   </div>
@@ -268,13 +272,18 @@
         }
       })
       alert('Order successfully');
+      Viewdata();
       if (fid) {
-        document.getElementById('button_'+fid).style.display = "none";
+        document.getElementById('button_'+fid).style.display ="none" ;
       }
     }
 
     const cart = () => {
       window.location.href = "cart.html"
+    }
+
+    const logout = () =>{
+      window.location.href="login.html"
     }
 
   </script>

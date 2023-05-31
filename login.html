@@ -25,6 +25,11 @@
     </div>
 
     <script type="text/javascript">
+        let chekUserLogout = JSON.parse(localStorage.getItem('UserLogin'));
+        if (chekUserLogout) {
+            alert('Plese Logout First');
+            window.location.href = "menu.html"
+        }
         const loginUser = () => {
 
             let email = document.getElementById('email').value;
@@ -33,7 +38,7 @@
             let val = JSON.parse(localStorage.getItem('user'));
             let check = 0;
             val.map((v) => {
-                if (v.email == email && v.password == password ) {
+                if (v.email == email && v.password == password) {
                     check = 1;
                     let obj = {
                         id: v.id,
@@ -55,7 +60,7 @@
             }
         }
 
-    
+
     </script>
 
 </body>

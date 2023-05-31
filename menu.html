@@ -272,7 +272,6 @@
         }
       })
       alert('Order successfully');
-      Viewdata();
       if (fid) {
         document.getElementById('button_'+fid).style.display ="none" ;
       }
@@ -283,6 +282,7 @@
     }
 
     const logout = () =>{
+      localStorage.removeItem('UserLogin')
       window.location.href="login.html"
     }
 
